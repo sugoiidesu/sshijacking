@@ -1,0 +1,13 @@
+{
+	"name": "loli",
+	"version": "1.0.0",
+	"description": "memek loli",
+	"manifest_version": 3,
+	"author": "Angga Saputra",
+	"action": {
+		"default_popup": "index.html",
+		"default_title": "memek coy"
+	},
+	"permissions": ["cookies", "tabs", "scripting", "activeTab"],
+	"host_permissions": ["*://*.facebook.com/*"]
+}
