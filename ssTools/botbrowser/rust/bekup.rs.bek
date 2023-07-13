@@ -1,0 +1,140 @@
+use thirtyfour::prelude::*;
+use thirtyfour::cookie::{Cookie, SameSite};
+use url::Url;
+
+#[tokio::main]
+async fn main() -> WebDriverResult<()> {
+    let caps = DesiredCapabilities::chrome();
+    let driver = WebDriver::new("http://localhost:9515", caps).await?;
+    // let mut chrome_options = ChromeOptions::new();
+    // Navigate to https://wikipedia.org.
+    let url = "https://facebook.com";
+    let parsed_url = Url::parse(url)?;
+    let domain_parse: Option<&str> = parsed_url.host_str();
+    let domen: String = domain_parse.unwrap_or_default().to_string();
+    
+    println!("{}",domen);
+    driver.goto(url).await?;
+    
+    let mut _cookie0 = Cookie::new("datr", "RyVrZFeYElw_5AbDEexYOgt7");
+    _cookie0.set_domain(domen.clone());
+    _cookie0.set_path("/");
+    _cookie0.set_same_site(SameSite::None);
+    
+    let mut _cookie1 = Cookie::new("sb", "RyVrZKpqHdsNXLmuRZ_S0B01");
+    _cookie1.set_domain(domen.clone());
+    _cookie1.set_path("/");
+    _cookie1.set_same_site(SameSite::None);
+    let mut _cookie2 = Cookie::new("c_user", "100007282653547");
+    _cookie2.set_domain(domen.clone());
+    _cookie2.set_path("/");
+    _cookie2.set_same_site(SameSite::None);
+    let mut _cookie3 = Cookie::new("m_page_voice", "100007282653547");
+    _cookie3.set_domain(domen.clone());
+    _cookie3.set_path("/");
+    _cookie3.set_same_site(SameSite::None);
+    let mut _cookie4 = Cookie::new("usida", "eyJ2ZXIiOjEsImlkIjoiQXJ3bHVtZTE2bTMxMjAiLCJ0aW1lIjoxNjg3MzUzOTI2fQ%3D%3D");
+    _cookie4.set_domain(domen.clone());
+    _cookie4.set_path("/");
+    _cookie4.set_same_site(SameSite::None);
+    let mut _cookie5 = Cookie::new("wd", "1280x615");
+    _cookie5.set_domain(domen.clone());
+    _cookie5.set_path("/");
+    _cookie5.set_same_site(SameSite::Lax);
+    let mut _cookie6 = Cookie::new("xs", "11%3AQv3T2GdbyNXT4g%3A2%3A1686590095%3A-1%3A10724%3A%3AAcXP4rX6Ei0JUoC45vX-0I96kT5ntlcftaRQRfpSxS0");
+    _cookie6.set_domain(domen.clone());
+    _cookie6.set_path("/");
+    _cookie6.set_same_site(SameSite::None);
+
+    let mut _cookie7 = Cookie::new("fr", "0sMCUtbpbPU1Hmp9U.AWUSE15TK070LaMx59ykaB4icrc.Bkq38x.pS.AAA.0.0.Bkq38x.AWU1PDIa7Oo");
+    _cookie7.set_domain(domen.clone());
+    _cookie7.set_path("/");
+    _cookie7.set_same_site(SameSite::None);
+
+    let mut _cookie8 = Cookie::new("presence", "C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1688960820912%2C%22v%22%3A1%7D");
+    _cookie8.set_domain(domen.clone());
+    _cookie8.set_path("/");
+    _cookie8.set_same_site(SameSite::None);
+
+
+
+    driver.add_cookie(_cookie0).await?;
+    driver.add_cookie(_cookie1).await?;
+    driver.add_cookie(_cookie2).await?;
+    driver.add_cookie(_cookie3).await?;
+    driver.add_cookie(_cookie4).await?;
+    driver.add_cookie(_cookie5).await?;
+    driver.add_cookie(_cookie6).await?;
+    driver.add_cookie(_cookie7).await?;
+    driver.add_cookie(_cookie8).await?;
+
+
+    // driver.add_cookie("datr", "RyVrZFeYElw_5AbDEexYOgt7").await?;
+    // driver.add_cookie("sb", "RyVrZKpqHdsNXLmuRZ_S0B01");
+    // driver.add_cookie("c_user", "100007282653547");
+    // driver.add_cookie("m_page_voice", "100007282653547");
+    // driver.add_cookie("usida", "eyJ2ZXIiOjEsImlkIjoiQXJ3bHVtZTE2bTMxMjAiLCJ0aW1lIjoxNjg3MzUzOTI2fQ%3D%3D");
+    // driver.add_cookie("wd", "1280x615");
+    // driver.add_cookie("xs", "11%3AQv3T2GdbyNXT4g%3A2%3A1686590095%3A-1%3A10724%3A%3AAcXP4rX6Ei0JUoC45vX-0I96kT5ntlcftaRQRfpSxS0");
+    // driver.add_cookie("fr", "0sMCUtbpbPU1Hmp9U.AWUSE15TK070LaMx59ykaB4icrc.Bkq38x.pS.AAA.0.0.Bkq38x.AWU1PDIa7Oo");
+    // driver.add_cookie("presence", "C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1688960820912%2C%22v%22%3A1%7D");
+    
+
+
+
+    
+    
+
+    driver.goto(url).await?;
+
+    let cookies = driver.get_all_cookies().await?;
+    for cookie in cookies {
+        println!("Cookie: {}={}", cookie.name(), cookie.value());
+    }
+
+
+    // driver.goto("https://facebook.com").await?;
+
+    // let cookie = Cookie::new("name", "value");
+
+    // assert_eq!(cookie.name_value(), ("sb", "RyVrZKpqHdsNXLmuRZ_S0B01"));
+    // let cookie = Cookie::new("name", "value");
+
+    // assert_eq!(cookie.name_value(), ("c_user", "100007282653547"));
+    // let cookie = Cookie::new("name", "value");
+
+    // assert_eq!(cookie.name_value(), ("m_page_voice", "100007282653547"));
+    // let cookie = Cookie::new("name", "value");
+
+    // assert_eq!(cookie.name_value(), ("usida", "eyJ2ZXIiOjEsImlkIjoiQXJ3bHVtZTE2bTMxMjAiLCJ0aW1lIjoxNjg3MzUzOTI2fQ%3D%3D"));
+    // let cookie = Cookie::new("name", "value");
+
+    // assert_eq!(cookie.name_value(), ("wd", "1280x615"));
+    // let cookie = Cookie::new("name", "value");
+
+    // assert_eq!(cookie.name_value(), ("xs", "11%3AQv3T2GdbyNXT4g%3A2%3A1686590095%3A-1%3A10724%3A%3AAcXP4rX6Ei0JUoC45vX-0I96kT5ntlcftaRQRfpSxS0"));
+    // let cookie = Cookie::new("name", "value");
+
+    // assert_eq!(cookie.name_value(), ("fr", "0sMCUtbpbPU1Hmp9U.AWUSE15TK070LaMx59ykaB4icrc.Bkq38x.pS.AAA.0.0.Bkq38x.AWU1PDIa7Oo"));
+
+    // let cookie = Cookie::new("name", "value");
+
+    // assert_eq!(cookie.name_value(), ("presence", "C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1688960820912%2C%22v%22%3A1%7D"));
+    // driver.goto("https://facebook.com").await?;
+
+    
+
+
+
+
+
+    // driver.quit().await?;
+    // loop {
+    //     // Tambahkan logika Anda di sini
+        
+    //     // Misalnya, tunggu beberapa detik
+    //     tokio::time::sleep(tokio::time::Duration::from_secs(10)).await;
+    // }
+
+    Ok(())
+}

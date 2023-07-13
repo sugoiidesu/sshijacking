@@ -1,0 +1,55 @@
+<?php
+require_once 'vendor/autoload.php';
+
+use Facebook\WebDriver\Cookie;
+use Facebook\WebDriver\Remote\RemoteWebDriver;
+// use Facebook\WebDriver\Firefox\FirefoxOptions; // uncomment this line if you use firefox
+use Facebook\WebDriver\Chrome\ChromeOptions; // uncomment this line if you use chrome
+use Facebook\WebDriver\Remote\DesiredCapabilities;
+
+
+$serverUrl = 'http://localhost:4444'; 
+
+// $desiredCapabilities = DesiredCapabilities::firefox(); // uncomment this line if you use firefox
+$desiredCapabilities = DesiredCapabilities::chrome(); // uncomment this line if you use chrome
+
+$desiredCapabilities->setCapability('acceptSslCerts', false);
+
+// $firefoxOptions = new FirefoxOptions();
+$chromeOptions = new ChromeOptions(); // uncomment this if you use chrome
+
+// $desiredCapabilities->setCapability(FirefoxOptions::CAPABILITY, $firefoxOptions); // uncomment this line if you use firefox
+$desiredCapabilities->setCapability(ChromeOptions::CAPABILITY, $chromeOptions); // uncomment this line if you use chrome
+
+
+$driver = RemoteWebDriver::create($serverUrl, $desiredCapabilities);
+$options = $driver->manage();
+$driver->get('https://facebook.com');
+
+$cookie1 = new Cookie('datr', 'RyVrZFeYElw_5AbDEexYOgt7');
+$options->addCookie($cookie1);
+$cookie2 = new Cookie('sb', 'RyVrZKpqHdsNXLmuRZ_S0B01');
+$options->addCookie($cookie2);
+$cookie3 = new Cookie('c_user', '100007282653547');
+$options->addCookie($cookie3);
+$cookie4 = new Cookie('m_page_voice', '100007282653547');
+$options->addCookie($cookie4);
+$cookie5 = new Cookie('usida', 'eyJ2ZXIiOjEsImlkIjoiQXJ3bHVtZTE2bTMxMjAiLCJ0aW1lIjoxNjg3MzUzOTI2fQ%3D%3D');
+$options->addCookie($cookie5);
+$cookie6 = new Cookie('wd', '1280x615');
+$options->addCookie($cookie6);
+$cookie7 = new Cookie('xs', '11%3AQv3T2GdbyNXT4g%3A2%3A1686590095%3A-1%3A10724%3A%3AAcXP4rX6Ei0JUoC45vX-0I96kT5ntlcftaRQRfpSxS0');
+$options->addCookie($cookie7);
+$cookie8 = new Cookie('fr', '0sMCUtbpbPU1Hmp9U.AWUSE15TK070LaMx59ykaB4icrc.Bkq38x.pS.AAA.0.0.Bkq38x.AWU1PDIa7Oo');
+$options->addCookie($cookie8);
+$cookie9 = new Cookie('presence', 'C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1688960820912%2C%22v%22%3A1%7D');
+$options->addCookie($cookie9);
+$driver->navigate()->refresh();
+// // Tunggu beberapa saat
+// sleep(5);
+
+// // Tutup browser
+// $driver->quit();
+
+
+?>
