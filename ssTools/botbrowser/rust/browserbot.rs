@@ -40,8 +40,8 @@ async fn main() -> WebDriverResult<()> {
     println!("Address: {}", address);
     println!("Cookie: {}", cookie_data);
 
-    // let caps = DesiredCapabilities::firefox();
-    let caps = DesiredCapabilities::chrome();
+    // let caps = DesiredCapabilities::firefox(); //jika pake firefox
+    let caps = DesiredCapabilities::chrome(); // jika pake chrome
 
     let driver = WebDriver::new("http://localhost:4444", caps).await?;
     
