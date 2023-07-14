@@ -1,9 +1,7 @@
 import sys, urllib.parse, json
 
 
-# Mengecek jumlah argumen yang diberikan
 if len(sys.argv) > 2:
-    # Mendapatkan nilai parameter setelah flag -u
     if sys.argv[1] == "-u":
         parameter = sys.argv[2]
         url_encoded_data = parameter

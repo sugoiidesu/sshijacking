@@ -7,13 +7,11 @@ import org.json.JSONObject;
 
 public class Kukiurldecode {
     public static void main(String[] args) {
-        // Mengecek jumlah argumen yang diberikan
         if (args.length > 1 && args[0].equals("-u")) {
             if (args.length > 1 && args[0].equals("-u")) {
                 String urlEncodedData = args[1];
                 try {
                     String decodedData = URLDecoder.decode(urlEncodedData, "UTF-8");
-                    // System.out.println(decodedData);
                     JSONObject json = new JSONObject();
                     String[] pairs = decodedData.split("&");
                     for (String pair : pairs) {
@@ -45,10 +43,6 @@ public class Kukiurldecode {
                     System.out.println("\n\nyour cookie:");
                     System.out.println(result.toString());
 
-                    // JSONObject jsonObject = new JSONObject(json);
-
-                    
-                    // System.out.println(json);
 
             
                 } catch (UnsupportedEncodingException e) {
@@ -58,12 +52,9 @@ public class Kukiurldecode {
                 System.out.println("Usage: java Kukiurldecode -u <url_encoded_data>");
             }
 
-            // String decodedData = URLDecoder.decode(parameter, "UTF-8");
-
-            // // Membuat objek JSON
             
         } else {
-            System.out.println("Penggunaan: java Main -u <parameter>");
+            System.out.println("Usage: java Kukiurldecode -u <url_encoded_data>");
         }
     }
 }

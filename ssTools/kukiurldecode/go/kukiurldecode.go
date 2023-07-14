@@ -9,11 +9,9 @@ import (
 
 func main() {
 
-	args := os.Args[1:] // Mengambil argumen dari indeks 1 (indeks 0 berisi nama program)
+	args := os.Args[1:] 
 
-	// Mengecek apakah argumen -u diberikan
 	if len(args) > 0 && args[0] == "-u" {
-		// Menampilkan kembali nilai argumen setelah -u
 		if len(args) > 1 {
 			encodeData := args[1]
 
@@ -23,17 +21,14 @@ func main() {
 				return
 			}
 
-			// Parsing data menjadi map
 			parsedData, err := url.ParseQuery(decodedData)
 			if err != nil {
 				fmt.Println("Gagal melakukan parsing data URL-encoded.")
 				return
 			}
 
-			// Membuat map kosong untuk menampung data JSON
 			jsonData := make(map[string][]string)
 
-			// Mengisi data JSON
 			for key, values := range parsedData {
 				jsonData[key] = values
 			}
@@ -44,15 +39,12 @@ func main() {
 				return
 			}
 		
-			// Membuat slice baru untuk menampung hasil
 			var result []string
 		
-			// Melakukan perulangan untuk setiap pasangan key-value
 			for i := 0; i < len(jsonData["nama[]"]); i++ {
 				result = append(result, fmt.Sprintf("%s=%s", jsonData["nama[]"][i], jsonData["isi[]"][i]))
 			}
 		
-			// Menggabungkan hasil menjadi satu string dengan pemisah ;
 			output := ""
 			if len(result) > 0 {
 				output = strings.Join(result, ";")

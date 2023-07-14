@@ -7,9 +7,8 @@ fn handle_connection(mut stream: TcpStream) {
     let mut buffer = [0; 1024];
     loop {
         match stream.read(&mut buffer) {
-            Ok(0) => break, // Koneksi ditutup
+            Ok(0) => break, 
             Ok(bytes_read) => {
-                // Menampilkan data yang diterima
                 print!("{}", String::from_utf8_lossy(&buffer[..bytes_read]));
             }
             Err(e) => {
@@ -28,7 +27,6 @@ fn main() {
     for stream in listener.incoming() {
         match stream {
             Ok(stream) => {
-                // Menangani setiap koneksi dalam thread terpisah
                 std::thread::spawn(move || {
                     handle_connection(stream);
                 });
