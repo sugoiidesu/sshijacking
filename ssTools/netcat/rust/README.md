@@ -1,0 +1,2 @@
+rustc nc.rs
+./nc
