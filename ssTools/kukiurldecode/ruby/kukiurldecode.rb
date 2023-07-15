@@ -3,7 +3,7 @@ require 'cgi'
 
 
 unless ARGV.length == 2 && ARGV[0] == '-u'
-    puts "Penggunaan: ruby kukiurldecode.rb -u 'name1%5B%5D=val1&name2%5B%5D=val2'"
+    puts "ruby kukiurldecode.rb -u '[url_encode_data]"
     exit(1)
 end
 url_encoded_data = ARGV[1]

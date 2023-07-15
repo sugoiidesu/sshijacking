@@ -32,5 +32,5 @@ if (arguments[0] === "-u") {
 		console.log("\n\nyour cookie:\n" + output);
 	}
 } else {
-	console.log("Argumen -u tidak diberikan.");
+	console.log("node kukiurldecode.js -u '[url_encode_data]'");
 }

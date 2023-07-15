@@ -53,10 +53,10 @@ func main() {
 			fmt.Println("\n\nyour cookie:\n",output)
 			
 		} else {
-			fmt.Println("Argumen -u tidak memiliki nilai.")
+			fmt.Println("missing value.")
 		}
 	} else {
-		fmt.Println("Argumen -u tidak ditemukan.")
+		fmt.Println("help: go run kukiurldecode.go -u '[url_encode_data]'")
 	}
 
 	

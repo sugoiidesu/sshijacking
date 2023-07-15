@@ -13,7 +13,7 @@ struct GetCookie {
 
 #[tokio::main]
 async fn main() -> WebDriverResult<()> {
-    let matches = App::new("Cookie Program")
+    let matches = App::new("Yametekudasai")
         .arg(
             Arg::with_name("address")
                 .short("a")
@@ -36,9 +36,6 @@ async fn main() -> WebDriverResult<()> {
 
     let address = matches.value_of("address").unwrap();
     let cookie_data = matches.value_of("cookie").unwrap();
-
-    println!("Address: {}", address);
-    println!("Cookie: {}", cookie_data);
 
     // let caps = DesiredCapabilities::firefox(); //jika pake firefox
     let caps = DesiredCapabilities::chrome(); // jika pake chrome

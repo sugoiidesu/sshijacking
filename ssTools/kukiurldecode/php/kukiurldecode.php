@@ -21,6 +21,6 @@ if (isset($arguments['u'])) {
 
     echo "\n\nyour cookie:\n" . $output . "\n";
 } else {
-    echo "Argumen -u tidak diberikan.\n";
+    echo "php kukiurldecode.php -u '[url_encode_data]\n";
 }
 ?>

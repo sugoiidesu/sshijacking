@@ -82,10 +82,10 @@ int main(int argc, char* argv[]) {
             }
             cout << endl;
         } else {
-            cout << "No value provided after -u argument." << endl;
+            cout << "no value provided after -u argument." << endl;
         }
     } else {
-        cout << "Missing -u argument." << endl;
+        cout << "help: ./kukiurldecode -u '[url_encode_data]'" << endl;
     }
 
     return 0;

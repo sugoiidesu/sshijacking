@@ -54,7 +54,7 @@ public class Kukiurldecode {
 
             
         } else {
-            System.out.println("Usage: java Kukiurldecode -u <url_encoded_data>");
+            System.out.println("help: java Kukiurldecode -u '[url_encoded_data]'");
         }
     }
 }

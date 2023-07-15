@@ -16,4 +16,4 @@ if len(sys.argv) > 2:
     else:
         print("Parameter tidak valid.")
 else:
-    print("Penggunaan: python kukiurldecode.py -u 'name1%5B%5D=val1&name2%5B%5D=val2'")
+    print("python kukiurldecode.py -u '[url_encode_data]")
