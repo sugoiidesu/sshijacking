@@ -1,0 +1,13 @@
+{
+	"manifest_version": 2,
+	"name": "Cookie Extension",
+	"version": "1.0",
+	"description": "Ekstensi untuk mendapatkan cookie",
+	"permissions": ["cookies", "activeTab", "http://*/*", "https://*/*"],
+	"background": {
+		"scripts": ["fungsi.js"]
+	},
+	"browser_action": {
+		"default_title": "Get Cookie"
+	}
+}

