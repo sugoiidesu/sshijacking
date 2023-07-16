@@ -202,6 +202,8 @@ pindah ke directory `target`
 cd target
 ```
 
+jalankan toolsnya.
+
 ```sh
 java -jar browserbot-1.0-SNAPSHOT.jar
 ```
