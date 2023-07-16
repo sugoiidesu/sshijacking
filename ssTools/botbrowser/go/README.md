@@ -33,7 +33,7 @@ go build main.go
 ./main
 ```
 
-## penggunakan
+## penggunaan
 
 untuk menggunakan program ini, tambahkan argument `--address` dan `--cookie`.
 
