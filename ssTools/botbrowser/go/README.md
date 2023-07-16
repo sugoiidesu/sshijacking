@@ -8,13 +8,13 @@ require
 
 ketik perintah berikut:
 
-```sh
+```bash
 go mod init browserbot
 ```
 
 install `selenium`
 
-```sh
+```bash
 go get github.com/tebeka/selenium
 ```
 
@@ -22,13 +22,13 @@ go get github.com/tebeka/selenium
 
 bisa langsung menggunakan seperti berikut ini:
 
-```sh
+```bash
 go run main.go
 ```
 
 atau dengan cara compile dulu baru jalankan.
 
-```sh
+```bash
 go build main.go
 ./main
 ```
@@ -37,7 +37,7 @@ go build main.go
 
 untuk menggunakan program ini, tambahkan argument `--address` dan `--cookie`.
 
-```sh
+```bash
 ./main --address https://facebook.com --cookie 'name1=value1;name2=value2'
 ```
 
