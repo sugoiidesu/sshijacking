@@ -1,5 +1,3 @@
-gem bundle install
-
 # browser bot with ruby
 
 require
