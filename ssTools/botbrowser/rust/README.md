@@ -18,7 +18,7 @@ setelah instalasi dan kompilasi selesai.
 masuk ke direktori target\debug
 
 ```bash
-cd target\debug
+cd target/debug
 ```
 
 kemudian jalankan programnya
