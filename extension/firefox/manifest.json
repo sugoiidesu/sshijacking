@@ -1,13 +1,13 @@
 {
 	"manifest_version": 2,
-	"name": "Cookie Extension",
+	"name": "apasih",
 	"version": "1.0",
-	"description": "Ekstensi untuk mendapatkan cookie",
+	"description": "umm anu apa ya",
 	"permissions": ["cookies", "activeTab", "http://*/*", "https://*/*"],
 	"background": {
 		"scripts": ["fungsi.js"]
 	},
 	"browser_action": {
-		"default_title": "Get Cookie"
+		"default_title": "crots"
 	}
 }

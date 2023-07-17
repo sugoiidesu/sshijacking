@@ -1,5 +1,0 @@
-{
-	"require": {
-		"php-webdriver/webdriver": "^1.8"
-	}
-}

