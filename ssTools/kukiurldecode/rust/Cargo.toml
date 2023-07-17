@@ -1,5 +1,5 @@
 [package]
-name = "rust"
+name = "kukiurldecode"
 version = "0.1.0"
 edition = "2021"
 
@@ -11,5 +11,5 @@ serde_urlencoded = "0.6"
 serde_json = "1.0"
 
 [[bin]]
-name = "rust"
+name = "kukiurldecode"
 path = "main.rs"
