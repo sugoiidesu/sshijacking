@@ -1,0 +1,3 @@
+```bash
+ruby kukijson.rb
+```

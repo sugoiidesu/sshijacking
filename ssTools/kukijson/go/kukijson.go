@@ -18,7 +18,7 @@ func main() {
 	flag.Parse()
 
 	if *filename == "" {
-		fmt.Println("Penggunaan: go run main.go -f <nama_file.json>")
+		fmt.Println("Penggunaan: go run kukijson.go -f <nama_file.json>")
 		os.Exit(1)
 	}
 
@@ -48,7 +48,6 @@ func formatData(data Data) string {
 
 		result += fmt.Sprintf("%s=%s", nama, isi)
 
-		// Tambahkan tanda ';' setiap kecuali elemen terakhir
 		if i != len(data.Nama)-1 {
 			result += ";"
 		}
