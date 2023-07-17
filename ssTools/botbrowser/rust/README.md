@@ -14,7 +14,19 @@ cargo build
 
 ## menjalankan tools
 
-setelah instalasi dan kompilasi selesai.
+jalankan terlebih dahulu `chromedriver` atau `geckodriver`.
+untuk chrome driver
+
+```bash
+./chromedriver --port=4444
+```
+
+atau geckodriver
+
+```bash
+./geckodriver
+```
+
 masuk ke direktori target\debug
 
 ```bash
