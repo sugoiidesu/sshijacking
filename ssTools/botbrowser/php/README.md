@@ -1,4 +1,4 @@
-# browser bot with javascript
+# browser bot with php
 
 require
 
