@@ -1,1 +1,3 @@
+```bash
 python nc.py
+```
