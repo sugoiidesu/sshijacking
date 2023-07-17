@@ -1,4 +1,4 @@
-# browser bot with ruby
+# browser bot with rust
 
 require
 
